@@ -8,6 +8,7 @@ module.exports = {
     },
     wildDuck: {
         url: process.env.WILDDUCK_URL,
-        token: process.env.WILDDUCK_TOKEN
+        token: process.env.WILDDUCK_TOKEN,
+        domain: process.env.WILDDUCK_DOMAIN
     }
 };

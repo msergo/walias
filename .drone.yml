@@ -1,0 +1,35 @@
+kind: pipeline
+type: kubernetes
+name: build
+steps:
+  - name: docker
+    image: harbor.k-space.ee/k-space/drone-kaniko
+    settings:
+      repo: ${DRONE_REPO}
+      tags: ${DRONE_BRANCH}
+      registry: harbor.codemowers.eu
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+
+  - name: test
+    image: harbor.codemowers.eu/msergo/walias:${DRONE_COMMIT_SHA}
+    settings:
+      registry: harbor.codemowers.eu
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+    commands:
+      - npm test
+
+# services:
+#   - name: mysql
+#     image: mysql:8
+#     environment:
+#       MYSQL_ROOT_PASSWORD: dev
+#       MYSQL_DATABASE: sky
+
+image_pull_secrets:
+  - dockerconfigjson
