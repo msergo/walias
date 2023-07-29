@@ -83,6 +83,21 @@ spec:
               value: https://walias-msergo.codemowers.ee
             - name: NODE_ENV
               value: prod
+            - name: WILDDUCK_URL
+              valueFrom:
+                secretKeyRef:
+                  name: walias-secrets
+                  key: WILDDUCK_URL
+            - name: WILDDUCK_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: walias-secrets
+                  key: WILDDUCK_TOKEN
+            - name: WILDDUCK_DOMAIN
+              valueFrom:
+                secretKeyRef:
+                  name: walias-secrets
+                  key: WILDDUCK_DOMAIN
           envFrom:
             - secretRef:
                 name: oidc-client-walias-owner-secrets

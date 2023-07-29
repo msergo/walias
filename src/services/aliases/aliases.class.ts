@@ -58,7 +58,7 @@ export class AliasesService<ServiceParams extends AliasesParams = AliasesParams>
     const aliasFirstPart = faker.animal.crocodilia()
       .replace(/\D/, '')
       .replace(/\s/, '')
-      .slice(10);
+      .slice(0, 10);
 
     const aliasSecondPart = faker.git.commitSha({ length: 5 });
     const alias = `${aliasFirstPart}-${aliasSecondPart}@${config.get('wildDuck.domain')}`;
