@@ -11,6 +11,7 @@
   },
   "wildDuck": {
     "url": "http://localhost",
-    "token": "aaaaa"
+    "token": "aaaaa",
+    "domain": "test-codemowers.eu"
   }
 }
