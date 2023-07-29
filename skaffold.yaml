@@ -1,0 +1,25 @@
+apiVersion: skaffold/v4beta1
+kind: Config
+build:
+  artifacts:
+    - image: walias
+
+manifests:
+  rawYaml:
+    - deployment.yaml
+
+profiles:
+  - name: dev
+    activation:
+      - command: dev
+    build:
+      artifacts:
+        - image: walias
+          docker:
+            target: dev
+          sync:
+            manual:
+              - src: .
+                dest: /app/
+    deploy:
+      kubectl: {}
