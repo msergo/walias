@@ -19,6 +19,7 @@ WORKDIR /app
 COPY --from=dev  /app/package.json /app/package-lock.json /app/
 COPY  config /app/config
 COPY --from=dev  /app/lib /app/lib
+COPY --from=dev  /app/public /app/public
 
 RUN npm ci --only=production --silent
 
