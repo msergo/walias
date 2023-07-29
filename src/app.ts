@@ -47,14 +47,6 @@ app.use(function (req, _res, next) {
   next()
 });
 
-app.use('/authme', (req, res) => {
-  //@ts-ignore
-  req.session.user = {
-    email: "her@va.mm"
-  }
-  res.send("done locally")
-})
-
 app.use(urlencoded({ extended: true }))
 // Host the public folder
 app.use('/', serveStatic(app.get('public')))
