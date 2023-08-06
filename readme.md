@@ -1,6 +1,7 @@
 # walias
 
 > Manage email aliases for Wild Duck mail server
+> The project has eventually been moved to the [K-Space repository](git.k-space.ee/k-space/walias).
 
 ## About
 
