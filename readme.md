@@ -2,11 +2,10 @@
 
 > Manage email aliases for Wild Duck mail server.
 
-> The project has eventually been moved to the [K-Space repository](git.k-space.ee/k-space/walias).
-
 ## About
 
-This project was build for [K-Space Hackathon2023](https://wiki.k-space.ee/en/hackathon/2023)
+This project was build for [K-Space Hackathon2023](https://wiki.k-space.ee/en/hackathon/2023) and has eventually been moved to the [K-Space repository](git.k-space.ee/k-space/walias).
+
 
 ## Features
  * auth with oidc
